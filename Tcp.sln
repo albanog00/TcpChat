@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpChat", "TcpChat\TcpChat.csproj", "{22494BE8-6654-4E75-8B51-987E15A86577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpChat.Server", "TcpChat.Server\TcpChat.Server.csproj", "{8C208FD0-F6BB-4AEF-A75F-3EB2E5D67DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpChat.Client", "TcpChat.Client\TcpChat.Client.csproj", "{DC9F1AFE-9517-449C-9627-0204507C4760}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22494BE8-6654-4E75-8B51-987E15A86577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22494BE8-6654-4E75-8B51-987E15A86577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22494BE8-6654-4E75-8B51-987E15A86577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22494BE8-6654-4E75-8B51-987E15A86577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C208FD0-F6BB-4AEF-A75F-3EB2E5D67DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C208FD0-F6BB-4AEF-A75F-3EB2E5D67DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C208FD0-F6BB-4AEF-A75F-3EB2E5D67DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C208FD0-F6BB-4AEF-A75F-3EB2E5D67DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9F1AFE-9517-449C-9627-0204507C4760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9F1AFE-9517-449C-9627-0204507C4760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9F1AFE-9517-449C-9627-0204507C4760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9F1AFE-9517-449C-9627-0204507C4760}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
