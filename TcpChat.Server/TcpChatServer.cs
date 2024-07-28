@@ -49,14 +49,10 @@ public class TcpChatServer
 
         while (Running)
         {
-            if (_listener.Pending()) Task.Run(HandleNewConnection);
-
-            if (_clients.Count > 0)
-            {
-                Task.Run(CheckForDisconnect);
-                Task.Run(CheckForNewMessages);
-                Task.Run(SendMessages);
-            }
+            Task.Run(HandleNewConnection);
+            Task.Run(CheckForDisconnect);
+            Task.Run(SendMessages);
+            Task.Run(CheckForNewMessages);
 
             Thread.Sleep(10);
         }
@@ -69,7 +65,7 @@ public class TcpChatServer
 
     private void HandleNewConnection()
     {
-        if (!ConnectionSemaphore.Wait(1)) return;
+        if (!_listener.Pending() || !ConnectionSemaphore.Wait(1)) return;
 
         var newClient = _listener.AcceptTcpClient();
 
@@ -180,7 +176,9 @@ public class TcpChatServer
 
         while (_messageQueue.Count > 0)
         {
-            var msg = _messageQueue.Dequeue();
+            _messageQueue.TryDequeue(out var msg);
+            if (msg == null) break;
+
             byte[] buffer = Encoding.UTF8.GetBytes(msg);
             Console.WriteLine(msg);
 
@@ -195,8 +193,7 @@ public class TcpChatServer
     {
         try
         {
-            var socket = client.Client;
-            return socket.Poll(10 * 1000, SelectMode.SelectRead) && (socket.Available == 0);
+            return client.Client.Poll(1 * 1000, SelectMode.SelectRead) && (client.Client.Available == 0);
         }
         catch (SocketException exception)
         {

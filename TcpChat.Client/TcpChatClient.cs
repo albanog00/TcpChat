@@ -125,9 +125,9 @@ public class TcpChatClient
     {
         while (Running)
         {
+            Task.Run(SendMessages);
             if (_client.Available > 0) Task.Run(ListenForMessages);
             if (_messages.Count > 0) Task.Run(ShowMessages);
-            Task.Run(SendMessages);
 
             if (IsDisconnected())
             {
