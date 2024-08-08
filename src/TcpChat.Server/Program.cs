@@ -1,6 +1,6 @@
 using TcpChat.Server;
 
-TcpChatServer chat;
+TcpServer chat;
 
 void InterruptHandler(object? sender, ConsoleCancelEventArgs args)
 {
@@ -10,7 +10,7 @@ void InterruptHandler(object? sender, ConsoleCancelEventArgs args)
 
 string name = "IRC";
 int port = 6000;
-chat = new TcpChatServer(name, port);
+chat = new TcpServer(name, port);
 
 Console.CancelKeyPress += InterruptHandler;
 
